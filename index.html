@@ -14,7 +14,7 @@
     <div class="containerBig">
         <header>
             <div class="logo">
-                <img src="logo-ikatec-new.webp" alt="Company Logo" class="logo-image">
+                <img src="condfy.png" alt="Company Logo" class="logo-image">
             </div>
         </header>
         <div class="container">
@@ -25,10 +25,6 @@
                 <input type="email" id="email" placeholder="Email da URL" required><br>
                 <input type="password" id="password" placeholder="Password da URL" required><br>
                 <div style="display: flex; flex-direction: row; align-items: center;">
-                    <span>https://</span>
-                    <input type="urlApi" id="urlApi" placeholder="Ex: ikatec.digisac.chat" value="ikatec.digisac.chat"
-                        required><br>
-                    <span>/api/v1/</span>
                 </div>
 
                 <button class="loginButton" type="button" id="login" onclick="loginAndActivate()">Login</button>
@@ -52,11 +48,6 @@
                 <label for="selector1">Selecione o departamento de desativação:</label>
                 <select id="selector1" required>
                     <option value="Message Distribution Suporte">Suporte</option>
-                    <option value="Message Distribution Robo">Robô</option>
-                    <option value="Message Distribution Integracao">Integração</option>
-                    <option value="Message Distribution Waba">Waba</option>
-                    <option value="Message Distribution Estrategico">Estratégico</option>
-                    <option value="Message Distribution N2">N2</option>
                 </select>
                 <button onclick="confirmDeactivation()">Confirmar Desativação</button>
                 <span class="close" onclick="closeModal('deactivateModal')">&times;</span>
@@ -67,11 +58,6 @@
                 <label for="selector2">Selecione o departamento de ativação:</label>
                 <select id="selector2" required>
                     <option value="Message Distribution Suporte">Suporte</option>
-                    <option value="Message Distribution Robo">Robô</option>
-                    <option value="Message Distribution Integracao">Integração</option>
-                    <option value="Message Distribution Waba">Waba</option>
-                    <option value="Message Distribution Estrategico">Estratégico</option>
-                    <option value="Message Distribution N2">N2</option>
                 </select>
                 <button onclick="confirmActivation()">Confirmar Ativação</button>
                 <span class="close" onclick="closeModal('departmentModal')">&times;</span>
