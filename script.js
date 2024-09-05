@@ -6,12 +6,11 @@ function loginAndActivate() {
   // Get user input values
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
-  let urlApi = document.getElementById("urlApi").value;
 
   // Add "/api/v1/" to the urlApi if it doesn't already contain it
-  if (!urlApi.endsWith("/api/v1/")) {
-    urlApi += "/api/v1/";
-  }
+  // if (!urlApi.endsWith("/api/v1/")) {
+  //   urlApi += "/api/v1/";
+  // }
 
   // Set request headers
   const myHeaders = new Headers();
@@ -21,7 +20,7 @@ function loginAndActivate() {
   const raw = JSON.stringify({
     "email": email,
     "password": password,
-    "urlApi": `https://${urlApi}`
+    "urlApi": `https://condfy.digisac.app/api/v1/`
   });
 
   // Set fetch request options
@@ -33,7 +32,7 @@ function loginAndActivate() {
   };
 
   // Make a fetch request to get user data
-  fetch("https://n8n.integracao.cloud/webhook/getUser", requestOptions)
+  fetch("https://n8n.integracao.cloud/webhook-test/getUser", requestOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -136,7 +135,7 @@ function confirmDeactivation(modal) {
   };
 
   // Make a fetch request to deactivate user
-  fetch("https://n8n.integracao.cloud/webhook/deactivateUser", deactivateOptions)
+  fetch("https://condfyteste.free.beeceptor.com", deactivateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -186,7 +185,7 @@ function confirmActivation() {
   };
 
   // Make a fetch request to activate user
-  fetch("https://n8n.integracao.cloud/webhook/activateUser", activateOptions)
+  fetch("https://condfyteste.free.beeceptor.com", activateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
