@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <div class="containerBig">
+        <header>
+            <div class="logo">
+                <img src="logo-ikatec-new.webp" alt="Company Logo" class="logo-image">
+            </div>
+        </header>
+        <div class="container">
+
+
+            <h2>Login Distribuição Automática</h2>
+            <form id="loginForm" class="formDigi">
+                <input type="email" id="email" placeholder="Email da URL" required><br>
+                <input type="password" id="password" placeholder="Password da URL" required><br>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <span>https://</span>
+                    <input type="urlApi" id="urlApi" placeholder="Ex: ikatec.digisac.chat" value="ikatec.digisac.chat"
+                        required><br>
+                    <span>/api/v1/</span>
+                </div>
+
+                <button class="loginButton" type="button" id="login" onclick="loginAndActivate()">Login</button>
+            </form>
+
+            <div id="activationButtons" style="display: none;">
+                <button onclick="activateAccount()">Ativar Distribuição</button>
+                <button onclick="deactivateAccount()">Desativar Distribuição</button>
+            </div>
+            <div class="rolesList" id="rolesList" style="display: none;"></div>
+        </div>
+        <div id="deactivateModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <label for="reason">Selecione o motivo:</label>
+                <select id="reason" required>
+                    <option value="Almoço">Almoço</option>
+                    <option value="Reunião">Reunião</option>
+                    <option value="Fim-do-expediente">Fim do expediente</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <label for="selector1">Selecione o departamento de desativação:</label>
+                <select id="selector1" required>
+                    <option value="Message Distribution Suporte">Suporte</option>
+                    <option value="Message Distribution Robo">Robô</option>
+                    <option value="Message Distribution Integracao">Integração</option>
+                    <option value="Message Distribution Waba">Waba</option>
+                    <option value="Message Distribution Estrategico">Estratégico</option>
+                    <option value="Message Distribution N2">N2</option>
+                </select>
+                <button onclick="confirmDeactivation()">Confirmar Desativação</button>
+                <span class="close" onclick="closeModal('deactivateModal')">&times;</span>
+            </div>
+        </div>
+        <div id="departmentModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <label for="selector2">Selecione o departamento de ativação:</label>
+                <select id="selector2" required>
+                    <option value="Message Distribution Suporte">Suporte</option>
+                    <option value="Message Distribution Robo">Robô</option>
+                    <option value="Message Distribution Integracao">Integração</option>
+                    <option value="Message Distribution Waba">Waba</option>
+                    <option value="Message Distribution Estrategico">Estratégico</option>
+                    <option value="Message Distribution N2">N2</option>
+                </select>
+                <button onclick="confirmActivation()">Confirmar Ativação</button>
+                <span class="close" onclick="closeModal('departmentModal')">&times;</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
