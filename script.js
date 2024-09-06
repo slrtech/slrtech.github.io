@@ -135,7 +135,7 @@ function confirmDeactivation(modal) {
   };
 
   // Make a fetch request to deactivate user
-  fetch("https://testesauto.app.n8n.cloud/webhook-test/activateUser", deactivateOptions)
+  fetch("https://testesauto.app.n8n.cloud/webhook/deactivateUser", deactivateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -185,7 +185,7 @@ function confirmActivation() {
   };
 
   // Make a fetch request to activate user
-  fetch("https://testesauto.app.n8n.cloud/webhook/deactivateUser", activateOptions)
+  fetch("https://testesauto.app.n8n.cloud/webhook/activateUser", activateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
