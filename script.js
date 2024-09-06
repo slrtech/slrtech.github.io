@@ -32,7 +32,7 @@ function loginAndActivate() {
   };
 
   // Make a fetch request to get user data
-  fetch("https://n8n.integracao.cloud/webhook-test/getUser", requestOptions)
+  fetch("https://testesauto.app.n8n.cloud/webhook/getUser", requestOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -135,7 +135,7 @@ function confirmDeactivation(modal) {
   };
 
   // Make a fetch request to deactivate user
-  fetch("https://condfyteste.free.beeceptor.com", deactivateOptions)
+  fetch("https://testesauto.app.n8n.cloud/webhook-test/activateUser", deactivateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -185,7 +185,7 @@ function confirmActivation() {
   };
 
   // Make a fetch request to activate user
-  fetch("https://condfyteste.free.beeceptor.com", activateOptions)
+  fetch("https://testesauto.app.n8n.cloud/webhook/deactivateUser", activateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
