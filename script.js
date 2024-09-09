@@ -3,6 +3,7 @@ let loggedInUser;
 
 // Function to log in and activate user
 function loginAndActivate() {
+  document.getElementById("loading").style.display = "flex";
   // Get user input values
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -37,6 +38,7 @@ function loginAndActivate() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      document.getElementById("loading").style.display = "none";
       return response.json();
     })
     .then(user => {
@@ -50,6 +52,7 @@ function loginAndActivate() {
     })
     .catch(error => {
       console.error('Error:', error.message);
+      document.getElementById("loading").style.display = "none";
       Swal.fire({
         icon: "error",
         title: "Error...",
@@ -133,13 +136,14 @@ function confirmDeactivation(modal) {
     body: userBody,
     redirect: 'follow'
   };
-
+  document.getElementById("loading").style.display = "flex";
   // Make a fetch request to deactivate user
   fetch("https://testesauto.app.n8n.cloud/webhook/deactivateUser", deactivateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      document.getElementById("loading").style.display = "none";
       return response.json();
     })
     .then(data => {
@@ -153,6 +157,7 @@ function confirmDeactivation(modal) {
     })
     .catch(error => {
       console.error('Error:', error.message);
+      document.getElementById("loading").style.display = "none";
       Swal.fire({
         icon: "error",
         title: "Error...",
@@ -184,12 +189,14 @@ function confirmActivation() {
     redirect: 'follow'
   };
 
+  document.getElementById("loading").style.display = "flex";
   // Make a fetch request to activate user
   fetch("https://testesauto.app.n8n.cloud/webhook/activateUser", activateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      document.getElementById("loading").style.display = "none";
       return response.json();
     })
     .then(data => {
@@ -204,6 +211,7 @@ function confirmActivation() {
     })
     .catch(error => {
       console.error('Error:', error.message);
+      document.getElementById("loading").style.display = "none";
       Swal.fire({
         icon: "error",
         title: "Error...",
