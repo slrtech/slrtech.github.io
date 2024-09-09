@@ -53,8 +53,8 @@ input {
 
 button {
   font-size: medium;
-  margin-top: 10px;
-  background-color: #52438e;
+  margin-top: 15px;
+  background-color: #58648c;
   color: #fff;
   padding: 10px;
   border: none;
@@ -62,20 +62,17 @@ button {
   cursor: pointer;
 }
 
-/* .loginButton {
+
+.loginButton {
   font-size: medium;
-  margin-top: 10px;
+  margin-top: -15px;
   background-color: #58648c;
   color: #fff;
   padding: 10px;
   border: none;
-  width: 330px;
-  margin-left: 10px;
   border-radius: 4px;
   cursor: pointer;
-} */
-
-
+}
 
 button:hover {
   background-color: #45a049;
@@ -83,7 +80,7 @@ button:hover {
 
 #activationButtons {
   display: none;
-  margin-top: 20px;
+  margin-top: -15px;
 }
 
 .modal {
@@ -121,7 +118,7 @@ select {
 .logo {
   width: 200px;
   display:inline-block;
-  transform:translatex(-150px) translatey(-237px);
+  transform:translatex(-108px) translatey(-240px);
 }
 
 .close {
@@ -150,30 +147,39 @@ select {
   display: none;
 }
 
-/* Container big */
-/* .containerBig{
-  
-  transform:translatex(-94px) translatey(-257px);
- } */
- 
- /* Image */
- /* .containerBig .logo img{
-  display:inline-block;
-  transform:translatex(87px) translatey(-4px);
- } */
- 
- /* Container */
- /* .containerBig .container{
-  padding-top:0px;
- } */
- 
- /* Modal content */
- /* #departmentModal .modal-content{
-  transform:translatex(0px) translatey(-55px);
- } */
- 
- /* Modal content */
- /* #deactivateModal .modal-content{
-  transform:translatex(0px) translatey(-55px);
- }  */
- 
+/* Loading container */
+#loading {
+  display: none; /* Oculto inicialmente */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Coloca o loading acima de outros elementos */
+  background-color: #000; /* Fundo preto */
+}
+
+/* Spinner animation */
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+p {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 20px;
+}
+
