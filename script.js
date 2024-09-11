@@ -33,7 +33,7 @@ function loginAndActivate() {
   };
 
   // Make a fetch request to get user data
-  fetch("https://integracao.cloud/webhook/getUser", requestOptions)
+  fetch("https://app.integracao.cloud/webhook/getUser", requestOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -138,7 +138,7 @@ function confirmDeactivation(modal) {
   };
   document.getElementById("loading").style.display = "flex";
   // Make a fetch request to deactivate user
-  fetch("https://integracao.cloud/webhook/deactivateUser", deactivateOptions)
+  fetch("https://app.integracao.cloud/webhook/deactivateUser", deactivateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -191,7 +191,7 @@ function confirmActivation() {
 
   document.getElementById("loading").style.display = "flex";
   // Make a fetch request to activate user
-  fetch("https://integracao.cloud/webhook/activateUser", activateOptions)
+  fetch("https://app.integracao.cloud/webhook/activateUser", activateOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
